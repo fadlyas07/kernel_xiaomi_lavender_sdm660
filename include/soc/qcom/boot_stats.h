@@ -33,7 +33,10 @@ struct boot_stats {
 
 int boot_stats_init(void);
 int boot_stats_exit(void);
-unsigned long long int msm_timer_get_sclk_ticks(void);
+static inline unsigned long long int msm_timer_get_sclk_ticks(void)
+{
+	return 0;
+}
 phys_addr_t msm_timer_get_pa(void);
 #else
 static inline int boot_stats_init(void) { return 0; }
